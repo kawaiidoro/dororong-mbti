@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f2">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="description" content="MBTI 네 글자로 만나는 나만의 도로롱. 16가지 귀여운 도로롱 이미지와 성격 설명을 만나고 나만의 캐릭터 카드를 저장하세요.">
+  <title>나의 도로롱 · MBTI 도로롱 연구소</title>
+  <meta property="og:title" content="나의 도로롱 · MBTI 도로롱 연구소">
+  <meta property="og:description" content="너랑 똑 닮은 말랑한 친구. MBTI로 나만의 도로롱을 만나 봐!">
+  <meta property="og:locale" content="ko_KR">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="preload" as="image" href="assets/infp.png">
+</head>
+<body>
+  <a href="#mbti" class="skip-link">도로롱 만들기로 바로 가기</a>
+  <header class="site-header wrap">
+    <a class="brand" href="./" aria-label="도로롱 연구소 처음으로"><span class="brand-mark" aria-hidden="true">✳</span><span>도로롱 연구소<small>DORORONG CLUB</small></span></a>
+    <nav aria-label="메인 메뉴"><a href="#collection">16종 도감 <span aria-hidden="true">↗</span></a><a href="#mbti" class="nav-pill">내 도로롱 찾기</a></nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span aria-hidden="true">✦</span> 16개의 성격, 16개의 귀여움</div>
+        <h1 id="hero-title">내 성격을 닮은<br><span>나만의 도로롱.</span></h1>
+        <p class="hero-intro">MBTI 네 글자면 충분해.<br>너랑 똑 닮은 말랑한 친구를 만나 봐!</p>
+
+        <form id="creator" novalidate class="creator">
+          <label class="field-label" for="mbti">너의 MBTI를 알려 줘 <span>01 / MBTI</span></label>
+          <div class="input-shell" id="mbti-shell"><input id="mbti" name="mbti" placeholder="예: INFP" maxlength="8" autocapitalize="characters" autocomplete="off" spellcheck="false" aria-describedby="mbti-hint mbti-error"><span id="input-check" aria-hidden="true">✦</span></div>
+          <p id="mbti-hint" class="input-hint">직접 입력하거나 아래 글자를 하나씩 골라도 좋아.</p>
+          <div class="axis-picker" aria-label="MBTI 글자 선택">
+            <div class="axis" role="group" aria-label="에너지 방향"><button type="button" data-axis="0" data-letter="I" aria-pressed="false" aria-label="I 내향">I</button><button type="button" data-axis="0" data-letter="E" aria-pressed="false" aria-label="E 외향">E</button></div>
+            <div class="axis" role="group" aria-label="정보 인식"><button type="button" data-axis="1" data-letter="N" aria-pressed="false" aria-label="N 직관">N</button><button type="button" data-axis="1" data-letter="S" aria-pressed="false" aria-label="S 감각">S</button></div>
+            <div class="axis" role="group" aria-label="판단 방식"><button type="button" data-axis="2" data-letter="F" aria-pressed="false" aria-label="F 감정">F</button><button type="button" data-axis="2" data-letter="T" aria-pressed="false" aria-label="T 사고">T</button></div>
+            <div class="axis" role="group" aria-label="생활 방식"><button type="button" data-axis="3" data-letter="P" aria-pressed="false" aria-label="P 인식">P</button><button type="button" data-axis="3" data-letter="J" aria-pressed="false" aria-label="J 판단">J</button></div>
+          </div>
+          <p class="error-text" id="mbti-error" role="alert" hidden></p>
+          <div class="name-field"><label for="nickname">도로롱 이름 <span>선택</span></label><input id="nickname" name="nickname" maxlength="12" placeholder="이름도 지어 줄래?" autocomplete="off"></div>
+          <div class="create-actions"><button type="submit" class="primary-button" id="create-button"><span>내 도로롱 만나기</span><span aria-hidden="true">→</span></button><button type="button" id="random-button" class="random-button" title="랜덤 도로롱 만나기" aria-label="랜덤 도로롱 만나기"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.7" transform="rotate(-8 12 12)"/><circle cx="8" cy="8" r="1.3" fill="currentColor"/><circle cx="16" cy="8" r="1.3" fill="currentColor"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/><circle cx="8" cy="16" r="1.3" fill="currentColor"/><circle cx="16" cy="16" r="1.3" fill="currentColor"/></svg></button></div>
+          <p class="little-note">검사 없이 바로 만나기 <span>·</span> 16가지 유형 모두 준비 완료</p>
+        </form>
+      </div>
+
+      <div class="hero-art" aria-label="꽃 왕관과 달 쿠션을 가진 INFP 도로롱 예시">
+        <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
+        <span class="doodle doodle-star" aria-hidden="true">✳</span><span class="doodle doodle-spark" aria-hidden="true">✧</span>
+        <span class="art-note note-one">작고 말랑한<br>또 다른 나!</span>
+        <a href="#mbti" id="hero-start" class="hero-image-wrap" aria-label="도로롱을 눌러 MBTI 입력하기"><img src="assets/infp.png" class="hero-image" width="360" height="360" style="max-width:100%;height:auto" alt="분홍 머리와 보라색 눈, 꽃 왕관을 쓰고 달 쿠션을 안은 도로롱" fetchpriority="high"><span class="image-shadow" aria-hidden="true"></span><span class="hero-start-label" aria-hidden="true">나도 도로롱 만들기 ↗</span></a>
+        <span class="art-note note-two">귀여움은<br>모든 유형 공통 ♡</span>
+        <div class="example-label"><span class="example-type">INFP</span><span>몽글몽글 도로롱<small>너는 어떤 도로롱일까?</small></span><span class="example-heart" aria-hidden="true">♡</span></div>
+        <div class="sticker-label" aria-hidden="true">100%<br>말랑함</div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div>나답게, 도로롱 <span>✳</span> SMALL FRIEND, BIG PERSONALITY <span>✳</span> 오늘도 말랑하게 <span>✳</span> 나답게, 도로롱 <span>✳</span> SMALL FRIEND, BIG PERSONALITY <span>✳</span> 오늘도 말랑하게 <span>✳</span></div></div>
+
+    <section id="result" class="result-section wrap" aria-labelledby="result-heading" hidden>
+      <div class="section-top"><div><p class="section-kicker">YOUR LITTLE FRIEND</p><h2 id="result-heading" tabindex="-1">드디어 만났네, 우리!</h2></div><span class="result-badge">발견 완료 <span aria-hidden="true">✦</span></span></div>
+      <div class="result-layout">
+        <article class="character-card" id="character-card">
+          <div class="card-top"><span class="result-type" id="result-type"></span><span class="card-number" id="card-number"></span></div>
+          <div class="character-image-stage"><span class="card-star" aria-hidden="true">✧</span><img id="result-image" width="1024" height="1024" alt=""><span class="card-heart" aria-hidden="true">♡</span></div>
+          <p class="card-subtitle" id="result-subtitle"></p><h3 id="result-title"></h3><p id="result-quote" class="result-quote"></p>
+          <div class="card-footer"><span>DORORONG CLUB</span><span>나답게, 도로롱 <span aria-hidden="true">✳</span></span></div>
+        </article>
+        <div class="result-story">
+          <p class="family-label" id="result-family"></p><h3>이 도로롱은<br><span>너를 조금 닮았어.</span></h3>
+          <div id="result-tags" class="result-tags"></div><p class="result-description" id="result-description"></p>
+          <div class="traits" id="result-traits"></div>
+          <div class="charge-note"><span aria-hidden="true">☕</span><div><strong>도로롱의 충전 방법</strong><p id="result-charge"></p></div></div>
+          <div class="result-actions"><button type="button" id="save-button" class="primary-button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m-4-4 4 4 4-4M5 16v4h14v-4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>내 도로롱 카드 저장</span></button><button type="button" id="copy-button" class="secondary-button">결과 링크 복사 <span aria-hidden="true">↗</span></button></div>
+          <div class="save-fallback" id="save-fallback" hidden><a id="save-fallback-link" download>카드 이미지 다운로드</a><button type="button" id="save-preview-button">이미지 열기</button><p>모바일에서는 이미지를 열고 길게 눌러 저장해도 좋아.</p></div>
+          <button type="button" class="text-button" id="again-button">다른 도로롱도 만나기 <span aria-hidden="true">↑</span></button>
+        </div>
+      </div>
+      <div class="character-guide" aria-labelledby="guide-heading">
+        <div class="guide-header">
+          <p class="section-kicker" id="guide-type"></p>
+          <h3 id="guide-heading">조금 더 가까이, 도로롱.</h3>
+          <p class="guide-intro">어떤 하루를 보내고, 어떻게 마음을 나눌까?<br>네 글자의 성향을 도로롱의 일상으로 풀어 봤어.</p>
+        </div>
+        <div class="preference-grid" id="result-preferences" aria-label="선택한 MBTI 네 글자의 의미"></div>
+        <div class="chapter-grid" id="result-chapters"></div>
+        <details class="story-sources">
+          <summary>이 이야기가 참고한 MBTI 자료 <span aria-hidden="true">↗</span></summary>
+          <p>공식 자료의 선호 경향을 참고해 일상과 대사, 소품 이야기는 도로롱에 맞게 새로 썼어. 같은 유형도 저마다 다를 수 있으니 너와 닮은 부분을 즐겨 줘.</p>
+          <div class="source-links">
+            <a id="result-source-type" target="_blank" rel="noopener noreferrer"></a>
+            <a href="https://www.myersbriggs.org/my-mbti-personality-type/the-mbti-preferences/" target="_blank" rel="noopener noreferrer">Myers &amp; Briggs Foundation · 네 가지 선호 지표</a>
+            <a href="https://www.myersbriggs.org/my-mbti-personality-type/the-16-mbti-personality-types/" target="_blank" rel="noopener noreferrer">Myers &amp; Briggs Foundation · 16가지 유형</a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="collection" class="collection wrap" aria-labelledby="collection-heading">
+      <div class="collection-header"><div><p class="section-kicker">THE DORORONG COLLECTION</p><h2 id="collection-heading">누구나 다른 귀여움.</h2><p class="section-description">조용한 몽상가부터 신나는 모험가까지.<br class="mobile-only"> 마음에 드는 친구를 눌러 봐.</p></div><span class="collection-total"><strong>16</strong>개의 작은 세계</span></div>
+      <div class="filter-bar" role="group" aria-label="도로롱 도감 필터"><button type="button" class="filter active" data-filter="all" aria-pressed="true">모든 도로롱 <span>16</span></button><button type="button" class="filter" data-filter="NF" aria-pressed="false">몽글한 외교형</button><button type="button" class="filter" data-filter="NT" aria-pressed="false">반짝이는 분석형</button><button type="button" class="filter" data-filter="SJ" aria-pressed="false">든든한 관리형</button><button type="button" class="filter" data-filter="SP" aria-pressed="false">자유로운 탐험형</button></div>
+      <div class="collection-grid" id="collection-grid"></div>
+      <p class="collection-footnote"><span aria-hidden="true">✳</span> 어떤 MBTI여도, 너만의 귀여움은 하나뿐이니까.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap"><a class="footer-brand" href="./">도로롱 연구소 <span aria-hidden="true">✳</span></a><p>도로롱 팬 메이드 · MBTI에서 영감을 받은 캐릭터 놀이</p><span>MADE OF LITTLE JOYS</span></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="noscript-note">MBTI 입력과 결과 카드를 이용하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+  <script type="module" src="app.js?v=4"></script>
+</body>
+</html>

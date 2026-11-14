@@ -4,6 +4,7 @@
   const supported = ['ko', 'en', 'ja'];
   const storageKey = 'dororong-language';
   const messages = window.DORORONG_TRANSLATIONS || {};
+  const translationsAvailable = Boolean(messages['언어 선택']?.en && messages['언어 선택']?.ja);
   const listeners = new Set();
   let language = 'ko';
   try {
@@ -14,6 +15,8 @@
     const requested = new URL(location.href).searchParams.get('lang');
     if (supported.includes(requested)) language = requested;
   }
+
+  if (!translationsAvailable) language = 'ko';
 
   function t(source, ...values) {
     const key = Array.isArray(source) ? source.reduce((s, part, i) => s + (i ? `{${i - 1}}` : '') + part, '') : source;
@@ -53,10 +56,13 @@
     for (const [element, name, source] of attributes) element.setAttribute(name, t(source));
     document.querySelector('meta[property="og:locale"]')?.setAttribute('content', {ko: 'ko_KR', en: 'en_US', ja: 'ja_JP'}[language]);
     const select = document.getElementById('language-select');
-    if (select) select.value = language;
+    if (select) {
+      select.value = language;
+      select.disabled = !translationsAvailable;
+    }
   }
   function setLanguage(next) {
-    if (!supported.includes(next) || next === language) return;
+    if (!translationsAvailable || !supported.includes(next) || next === language) return;
     language = next;
     try { localStorage.setItem(storageKey, language); } catch { /* The URL still keeps the selection. */ }
     try {
